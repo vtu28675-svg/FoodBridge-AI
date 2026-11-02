@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Collection - FoodBridge AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Food Collection</h1>
+
+    {% if collection_data %}
+
+        {% for item in collection_data %}
+
+            <div class="card">
+
+                <h3>{{ item.food_name }}</h3>
+
+                <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+
+                <p><strong>Location:</strong> {{ item.location }}</p>
+
+                <p><strong>Expiry Time:</strong> {{ item.expiry_time }}</p>
+
+                <p><strong>Donor:</strong> {{ item.donor_name }}</p>
+
+                <p><strong>Status:</strong> Accepted</p>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No accepted food collections available yet.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="{{ url_for('dashboard') }}" class="btn">
+        Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

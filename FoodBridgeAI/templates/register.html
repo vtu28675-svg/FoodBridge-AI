@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FoodBridge AI - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<section class="about">
+    <h2>Create Your Account</h2>
+    <p>Join FoodBridge AI!</p>
+
+    {% if message %}
+        <h3 style="color:green;">{{ message }}</h3>
+    {% endif %}
+
+    <form action="/register" method="POST">
+
+        <p><input type="text" name="name"
+        placeholder="Full Name" required></p><br>
+
+        <p><input type="email" name="email"
+        placeholder="Email Address" required></p><br>
+
+        <p><input type="password" name="password"
+        placeholder="Password" required></p><br>
+
+        <select name="role" required>
+            <option value="">Select Your Role</option>
+            <option value="donor">Food Donor</option>
+            <option value="ngo">NGO</option>
+        </select><br><br>
+
+        <button type="submit" class="btn">Register</button>
+
+    </form>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+    <a href="/">Back to Home</a>
+</section>
+
+</body>
+</html>

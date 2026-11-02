@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FoodBridge AI Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <section class="about">
+        <h1>Welcome, {{ name }}!</h1>
+        <h2>Your Dashboard</h2>
+        <p>Account Type: {{ role }}</p>
+        <p>Welcome to the FoodBridge AI platform.</p>
+        <br>
+        <a href="/logout" class="btn">Logout</a>
+    </section>
+</body>
+</html>

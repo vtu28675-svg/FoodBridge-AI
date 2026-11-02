@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Food Donation - FoodBridge AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<section class="about">
+    <h2>Add Food Donation</h2>
+    <p>Share your surplus food with people in need.</p>
+
+    {% if message %}
+        <p style="color:green;">{{ message }}</p>
+    {% endif %}
+
+    <form method="POST" action="/add-donation">
+
+        <p><input type="text" name="food_name"
+        placeholder="Food Name" required></p><br>
+
+        <p><input type="text" name="quantity"
+        placeholder="Quantity (e.g. 20 meals)" required></p><br>
+
+        <p><input type="text" name="location"
+        placeholder="Pickup Location" required></p><br>
+
+        <label>Food Available Until:</label><br>
+        <input type="datetime-local" name="expiry_time" required>
+        <br><br>
+
+        <p><textarea name="description"
+        placeholder="Food Description (optional)"
+        rows="4"></textarea></p><br>
+
+        <button type="submit" class="btn">Submit Donation</button>
+
+    </form>
+
+    <br>
+    <a href="/dashboard">Back to Dashboard</a>
+
+</section>
+
+</body>
+</html>

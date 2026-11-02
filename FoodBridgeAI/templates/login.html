@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | FoodBridge AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="auth-page">
+
+    <header class="auth-navbar">
+        <a href="{{ url_for('home') }}" class="auth-logo">
+            🌱 FoodBridge AI
+        </a>
+
+        <a href="{{ url_for('home') }}" class="home-link">
+            ← Back to Home
+        </a>
+    </header>
+
+    <main class="auth-wrapper">
+
+        <div class="auth-card">
+
+            <div class="auth-icon">🥗</div>
+
+            <h1>Welcome Back!</h1>
+
+            <p class="auth-subtitle">
+                Login to your FoodBridge AI account
+            </p>
+
+            {% if message %}
+                <div class="auth-message">
+                    {{ message }}
+                </div>
+            {% endif %}
+
+            <form action="{{ url_for('login') }}" method="POST">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="auth-button">
+                    Login to Account →
+                </button>
+
+            </form>
+
+            <div class="auth-footer">
+                Don't have an account?
+                <a href="{{ url_for('register') }}">Create Account</a>
+            </div>
+
+        </div>
+
+        <p class="auth-bottom-text">
+            💚 Share Food. Spread Hope. Fight Hunger.
+        </p>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Donations - FoodBridge AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>🍃 FoodBridge AI</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="about">
+
+        <h2>My Food Donations</h2>
+        <p>View the food donations you have submitted.</p>
+
+        {% if donations %}
+
+            <div class="cards">
+
+                {% for donation in donations %}
+
+                    <div class="card">
+
+                        <h3>🍱 {{ donation.food_name }}</h3>
+
+                        <p><strong>Quantity:</strong>
+                            {{ donation.quantity }}</p>
+
+                        <p><strong>Location:</strong>
+                            {{ donation.location }}</p>
+
+                        <p><strong>Available Until:</strong>
+                            {{ donation.expiry_time }}</p>
+
+                        <p><strong>Description:</strong>
+                            {{ donation.description or "No description" }}</p>
+
+                        <p><strong>Status:</strong>
+                            {{ donation.status }}</p>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <h3>No donations found.</h3>
+            <p>Please add your first food donation.</p>
+
+        {% endif %}
+
+        <br>
+        <a href="/add-donation" class="btn">Add More Food</a>
+
+        <br><br>
+        <a href="/dashboard">Back to Dashboard</a>
+
+    </section>
+
+    <footer>
+        <p>© 2026 FoodBridge AI | Together Against Food Waste</p>
+    </footer>
+
+</body>
+</html>

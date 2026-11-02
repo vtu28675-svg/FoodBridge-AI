@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donor Dashboard | FoodBridge AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="dashboard-navbar">
+
+        <a href="{{ url_for('home') }}" class="dashboard-logo">
+            🌱 FoodBridge AI
+        </a>
+
+        <div class="dashboard-nav-right">
+
+            <span>Welcome, {{ name }}</span>
+
+            <a href="{{ url_for('logout') }}" class="logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-container">
+
+        <!-- Welcome Banner -->
+        <section class="dashboard-welcome">
+
+            <span class="dashboard-tag">
+                FOOD DONOR PORTAL
+            </span>
+
+            <h1>Welcome, {{ name }}! 👋</h1>
+
+            <p>
+                Share your surplus food and make a difference.
+                Every donation brings hope to someone in need.
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard Heading -->
+        <section class="section-heading">
+
+            <h2>Your Donor Dashboard</h2>
+
+            <p>
+                Manage your food donations and help reduce food waste.
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard Cards -->
+        <section class="dashboard-cards">
+
+            <!-- Add Food -->
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">
+                    🍱
+                </div>
+
+                <h3>Add Food Donation</h3>
+
+                <p>
+                    Share your available surplus food with NGOs
+                    and community kitchens.
+                </p>
+
+                <a href="{{ url_for('add_donation') }}"
+                   class="dashboard-btn">
+                    Add Donation →
+                </a>
+
+            </div>
+
+
+            <!-- My Donations -->
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">
+                    📦
+                </div>
+
+                <h3>My Donations</h3>
+
+                <p>
+                    View and manage the food donations
+                    you have submitted.
+                </p>
+
+                <a href="{{ url_for('my_donations') }}"
+                   class="dashboard-btn">
+                    View Donations →
+                </a>
+
+            </div>
+
+
+            <!-- Donation Impact -->
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">
+                    💚
+                </div>
+
+                <h3>Make an Impact</h3>
+
+                <p>
+                    Your contribution helps feed people,
+                    support communities and reduce food waste.
+                </p>
+
+                <a href="{{ url_for('add_donation') }}"
+                   class="dashboard-btn">
+                    Donate Food →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Message -->
+        <section class="dashboard-message">
+
+            <h2>Share Food. Spread Hope. 🌍</h2>
+
+            <p>
+                Together, we can build a world where no food
+                goes to waste and no one goes hungry.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>© 2026 FoodBridge AI | Powered by AI for a Better Tomorrow</p>
+    </footer>
+
+</body>
+</html>

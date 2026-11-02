@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodBridge AI | Share Food, Spread Hope</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>🌱</span> FoodBridge AI
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="{{ url_for('login') }}" class="nav-login">Login</a>
+            <a href="{{ url_for('register') }}" class="nav-register">
+                Register
+            </a>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">AI-POWERED FOOD REDISTRIBUTION</span>
+
+            <h1>
+                Share Food,<br>
+                <span>Spread Hope!</span>
+            </h1>
+
+            <p>
+                Connecting surplus food with people in need using
+                Artificial Intelligence.
+                Together, let's reduce food waste and fight hunger.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{{ url_for('register') }}"
+                   class="primary-btn">
+                    Get Started →
+                </a>
+
+                <a href="#about" class="secondary-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+            <div class="hero-note">
+                🌍 Supporting SDG 2 – Zero Hunger
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <div class="food-illustration">
+                🥗
+            </div>
+
+            <div class="floating-card">
+                <span>💚</span>
+                <div>
+                    <strong>Food for Everyone</strong>
+                    <small>Share more. Waste less.</small>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+
+        <div class="section-heading">
+            <span class="section-tag">ABOUT US</span>
+
+            <h2>Making Food Reach Those in Need</h2>
+
+            <p>
+                FoodBridge AI is an intelligent food redistribution
+                platform that connects food donors with NGOs and
+                community kitchens to reduce food waste and fight hunger.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="works-section" id="how-it-works">
+
+        <div class="section-heading">
+
+            <span class="section-tag">OUR PROCESS</span>
+
+            <h2>How FoodBridge AI Works</h2>
+
+            <p>
+                A simple process that transforms surplus food into hope.
+            </p>
+
+        </div>
+
+        <div class="feature-cards">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🍱</div>
+
+                <h3>Food Donors</h3>
+
+                <p>
+                    Restaurants, hotels and organizations
+                    share their surplus food.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🤝</div>
+
+                <h3>NGOs</h3>
+
+                <p>
+                    NGOs and community kitchens find and
+                    request available food donations.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🤖</div>
+
+                <h3>AI Matching</h3>
+
+                <p>
+                    Artificial Intelligence helps match
+                    food donations with suitable NGOs.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Call To Action -->
+    <section class="cta-section">
+
+        <h2>Be Part of the Change!</h2>
+
+        <p>
+            Your small contribution can make a big difference.
+        </p>
+
+        <a href="{{ url_for('register') }}" class="primary-btn">
+            Join FoodBridge AI →
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <h2>🌱 FoodBridge AI</h2>
+
+        <p>Share Food. Spread Hope. Fight Hunger.</p>
+
+        <p class="copyright">
+            © 2026 FoodBridge AI. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

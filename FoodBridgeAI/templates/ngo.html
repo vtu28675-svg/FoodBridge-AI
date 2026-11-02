@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NGO Dashboard | FoodBridge AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Navigation -->
+    <header class="dashboard-navbar">
+
+        <a href="{{ url_for('home') }}" class="dashboard-logo">
+            🌱 FoodBridge AI
+        </a>
+
+        <div class="dashboard-nav-right">
+            <span>Welcome, {{ name }}</span>
+            <a href="{{ url_for('logout') }}" class="logout-btn">
+                Logout
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-container">
+
+        <section class="dashboard-welcome">
+
+            <span class="dashboard-tag">NGO PORTAL</span>
+
+            <h1>Welcome, {{ name }}! 👋</h1>
+
+            <p>
+                Find surplus food, connect with donors and help
+                people in need.
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard Cards -->
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">🍱</div>
+
+                <h2>Available Food</h2>
+
+                <p>
+                    Explore surplus food donations from restaurants,
+                    hotels and other food donors.
+                </p>
+
+                <a href="{{ url_for('available_food') }}"
+                   class="dashboard-btn">
+                    View Available Food →
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">📋</div>
+
+                <h2>My Requests</h2>
+
+                <p>
+                    Track your submitted food requests and
+                    check their current status.
+                </p>
+
+                <a href="{{ url_for('my_requests') }}"
+                   class="dashboard-btn">
+                    View My Requests →
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">🚚</div>
+
+                <h2>Food Collection</h2>
+
+                <p>
+                    View accepted food requests and manage
+                    your food collection details.
+                </p>
+
+                <a href="{{ url_for('food_collection') }}"
+                   class="dashboard-btn">
+                    View Collection →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Message -->
+        <section class="dashboard-message">
+
+            <h2>Every Meal Makes a Difference 💚</h2>
+
+            <p>
+                Together, we can reduce food waste and work
+                towards a hunger-free society.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        © 2026 FoodBridge AI | Share Food. Spread Hope.
+    </footer>
+
+</body>
+</html>

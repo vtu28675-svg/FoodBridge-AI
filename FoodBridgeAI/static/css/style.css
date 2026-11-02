@@ -1,0 +1,784 @@
+
+/* =========================================
+   FOODBRIDGE AI - COMPLETE WEBSITE CSS
+   Professional Green and White Theme
+========================================= */
+
+
+/* 1. GLOBAL SETTINGS */
+
+:root {
+    --green-dark: #14532d;
+    --green: #168348;
+    --green-light: #e7f5eb;
+    --green-hover: #106637;
+    --white: #ffffff;
+    --background: #f5faf6;
+    --text: #344b3c;
+    --muted: #718078;
+    --border: #dcebe0;
+    --shadow: 0 5px 20px rgba(20, 83, 45, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--green);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+/* 2. HEADINGS */
+
+h1, h2, h3, h4 {
+    color: var(--green-dark);
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+
+/* 3. NAVIGATION BAR */
+
+.navbar,
+.dashboard-navbar,
+.auth-navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 14px 7%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 3px 15px rgba(20, 83, 45, 0.07);
+    position: relative;
+    z-index: 10;
+}
+
+.logo,
+.dashboard-logo,
+.auth-logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--green);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav a {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.navbar nav a:hover {
+    color: var(--green);
+}
+
+.nav-register,
+.logout-btn {
+    background: var(--green);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.nav-register:hover,
+.logout-btn:hover {
+    background: var(--green-hover);
+}
+
+.dashboard-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+}
+
+
+/* 4. COMMON CONTAINERS */
+
+.container,
+.dashboard-container,
+.food-container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 45px auto;
+}
+
+
+/* 5. BUTTONS */
+
+.btn,
+button,
+.primary-btn,
+.dashboard-btn,
+.request-food-btn,
+.auth-button {
+    display: inline-block;
+    background: var(--green);
+    color: var(--white);
+    padding: 12px 23px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn:hover,
+button:hover,
+.primary-btn:hover,
+.dashboard-btn:hover,
+.request-food-btn:hover,
+.auth-button:hover {
+    background: var(--green-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    color: var(--green);
+    background: var(--white);
+    font-weight: 600;
+}
+
+
+/* 6. COMMON CARDS */
+
+.card,
+.feature-card,
+.dashboard-card,
+.food-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.card:hover,
+.feature-card:hover,
+.dashboard-card:hover,
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(20, 83, 45, 0.12);
+}
+
+
+/* 7. HOME PAGE */
+
+.hero {
+    min-height: 500px;
+    padding: 75px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(120deg, #e8f6ec, #ffffff);
+}
+
+.hero-content {
+    max-width: 570px;
+}
+
+.hero h1 {
+    font-size: 53px;
+    color: var(--green-dark);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #20a05a;
+}
+
+.hero-content p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.hero-tag,
+.section-tag,
+.food-tag,
+.dashboard-tag {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green);
+    padding: 7px 15px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    width: 350px;
+    height: 310px;
+    border-radius: 40%;
+    background: linear-gradient(140deg, #d8f1df, #a9dfb7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.food-illustration {
+    font-size: 130px;
+}
+
+.about-section,
+.works-section {
+    padding: 70px 8%;
+}
+
+.about-section {
+    background: var(--white);
+    text-align: center;
+}
+
+.works-section {
+    background: var(--background);
+}
+
+.section-heading {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.cta-section {
+    background: var(--green-dark);
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.cta-section h2,
+.cta-section p {
+    color: var(--white);
+}
+
+.cta-section .primary-btn {
+    background: var(--white);
+    color: var(--green-dark);
+}
+
+.footer,
+.dashboard-footer {
+    background: #103d26;
+    padding: 25px;
+    text-align: center;
+    color: #e2f2e6;
+}
+
+.footer h2 {
+    color: var(--white);
+}
+
+.footer p,
+.dashboard-footer p {
+    color: #d0e8d6;
+}
+
+
+/* 8. LOGIN AND REGISTER */
+
+.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eaf7ed, #f8fcf9);
+}
+
+.auth-wrapper {
+    min-height: calc(100vh - 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 35px rgba(20, 83, 45, 0.10);
+    text-align: center;
+}
+
+.auth-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.auth-card h1 {
+    font-size: 29px;
+}
+
+.auth-subtitle {
+    margin-bottom: 25px;
+}
+
+.auth-card form {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.auth-card label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.auth-card .form-group {
+    margin-bottom: 18px;
+}
+
+.auth-card input,
+.auth-card select {
+    margin: 0;
+}
+
+.auth-card .auth-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-footer {
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    font-weight: 700;
+}
+
+.auth-message {
+    background: #fff0ef;
+    color: #b42318;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+/* 9. INPUT FIELDS */
+
+form {
+    margin-top: 15px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 8px 0 15px;
+    border: 1px solid #c9dfcf;
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+    font-size: 15px;
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(22, 131, 72, 0.10);
+}
+
+label {
+    color: var(--text);
+    font-weight: 600;
+}
+
+
+/* 10. DONOR AND NGO DASHBOARDS */
+
+.dashboard-welcome {
+    background: linear-gradient(120deg, #176b3a, #25a45b);
+    padding: 40px;
+    border-radius: 16px;
+    color: var(--white);
+    margin-bottom: 35px;
+}
+
+.dashboard-welcome h1,
+.dashboard-welcome p {
+    color: var(--white);
+}
+
+.dashboard-welcome h1 {
+    margin-top: 15px;
+}
+
+.dashboard-container .section-heading {
+    text-align: left;
+    margin: 35px 0 25px;
+}
+
+.dashboard-container .section-heading h2 {
+    font-size: 27px;
+    color: var(--green-dark);
+}
+
+.dashboard-container .section-heading p {
+    color: var(--muted);
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    min-height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dashboard-card-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--green-light);
+    border-radius: 12px;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.dashboard-card h3 {
+    color: var(--green-dark);
+}
+
+.dashboard-card p {
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.dashboard-card .dashboard-btn {
+    margin-top: auto;
+    width: 100%;
+}
+
+.dashboard-message {
+    background: var(--green-light);
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.dashboard-message h2 {
+    color: var(--green-dark);
+}
+
+
+/* 11. AVAILABLE FOOD PAGE */
+
+.food-page {
+    min-height: 100vh;
+    background: var(--background);
+}
+
+.food-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.food-heading h1 {
+    color: var(--green-dark);
+    margin-top: 15px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.food-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.food-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--green-light);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.available-badge {
+    background: var(--green-light);
+    color: var(--green);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.food-details {
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+}
+
+.food-detail {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
+    gap: 3px;
+}
+
+.food-detail span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.food-detail strong {
+    color: var(--text);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.request-food-btn {
+    width: 100%;
+}
+
+.food-message {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    padding: 13px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-radius: 8px;
+}
+
+.no-food {
+    grid-column: 1 / -1;
+    background: var(--white);
+    padding: 45px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+
+/* 12. TABLES */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: 20px 0;
+}
+
+th {
+    background: var(--green);
+    color: var(--white);
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:hover td {
+    background: #f1f8f3;
+}
+
+
+/* 13. RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .food-grid,
+    .feature-cards,
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navbar,
+    .dashboard-navbar,
+    .auth-navbar {
+        flex-direction: column;
+        padding: 17px;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .dashboard-nav-right {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 260px;
+        height: 230px;
+    }
+
+    .food-illustration {
+        font-size: 100px;
+    }
+
+    .food-grid,
+    .feature-cards,
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .container,
+    .dashboard-container,
+    .food-container {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .dashboard-welcome {
+        padding: 25px;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 26px;
+    }
+
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}

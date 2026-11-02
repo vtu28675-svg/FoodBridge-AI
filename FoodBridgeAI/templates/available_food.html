@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Available Food | FoodBridge AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="food-page">
+
+    <!-- Navigation -->
+    <header class="dashboard-navbar">
+
+        <a href="{{ url_for('home') }}" class="dashboard-logo">
+            🌱 FoodBridge AI
+        </a>
+
+        <div class="dashboard-nav-right">
+            <span>Welcome, {{ name }}</span>
+
+            <a href="{{ url_for('dashboard') }}" class="logout-btn">
+                Dashboard
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="food-container">
+
+        <section class="food-heading">
+
+            <span class="food-tag">NGO FOOD PORTAL</span>
+
+            <h1>Available Food Donations 🍱</h1>
+
+            <p>
+                Discover fresh surplus food and request donations
+                for people who need them.
+            </p>
+
+        </section>
+
+
+        <!-- Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="food-message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+
+        <!-- Food Cards -->
+        <section class="food-grid">
+
+            {% if donations %}
+
+                {% for donation in donations %}
+
+                    <div class="food-card">
+
+                        <div class="food-card-top">
+                            <span class="food-icon">🥗</span>
+                            <span class="available-badge">
+                                ● Available
+                            </span>
+                        </div>
+
+                        <h2>{{ donation.food_name }}</h2>
+
+                        <p class="food-description">
+                            {{ donation.description or
+                               "Fresh surplus food available for donation." }}
+                        </p>
+
+                        <div class="food-details">
+
+                            <div class="food-detail">
+                                <span>📦 Quantity</span>
+                                <strong>{{ donation.quantity }}</strong>
+                            </div>
+
+                            <div class="food-detail">
+                                <span>📍 Location</span>
+                                <strong>{{ donation.location }}</strong>
+                            </div>
+
+                            <div class="food-detail">
+                                <span>⏰ Expiry Time</span>
+                                <strong>{{ donation.expiry_time }}</strong>
+                            </div>
+
+                            <div class="food-detail">
+                                <span>👤 Donor</span>
+                                <strong>{{ donation.donor_name }}</strong>
+                            </div>
+
+                        </div>
+
+                        <form
+                            action="{{ url_for('request_food',
+                                               donation_id=donation.id) }}"
+                            method="POST">
+
+                            <button type="submit" class="request-food-btn">
+                                Request This Food →
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="no-food">
+
+                    <div>🍽️</div>
+
+                    <h2>No Food Available</h2>
+
+                    <p>
+                        Currently, there are no food donations.
+                        Please check again later.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        © 2026 FoodBridge AI | Share Food. Spread Hope.
+    </footer>
+
+</body>
+</html>
